@@ -1,0 +1,26 @@
+[project]
+name = "invoice-generator"
+version = "0.1.0"
+description = "Professional invoice generator with PDF output"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "py-invoices[cli,pdf]>=1.7.0",
+]
+
+[project.optional-dependencies]
+parsing = [
+    "pdfplumber>=0.11.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+[tool.hatch.build.targets.wheel]
+packages = ["invoice_generator"]
+
+[tool.uv.sources]
+py-invoices = { path = "../py-invoices", editable = true }
+
