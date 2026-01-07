@@ -6,14 +6,19 @@ This project is an **AI-First User Empowerment Platform** for invoice management
 Your core purpose is to **empower the end-user** to manage their business efficiently. You do this by translating their high-level requests into actions using the `py-invoices` CLI and by managing the project's human-readable data files.
 
 ## 🚀 Core Principles
-- **CLI first**: Use `uv run py-invoices` for all operations.
+- **CLI first**:
+| Command | Description |
+|---|---|
+| **Validate**| `uv run py-invoices validate` |
+| **Extract** | `uv run extract-invoice [PDF]` |
+for all operations.
 - **Human-Readable Data**: Data is stored in `data/` as Markdown or YAML. This allows both the user and you to easily read, edit, and collaborate on records.
 - **Agentic Workflows**: Use the workflows defined in `.agent/workflows/` for complex tasks like setup or deployments.
 
 ## 🛠️ Key Commands
 - Always prefix Python commands with `uv run`.
 - Main CLI: `uv run py-invoices`
-- PDF Extraction: `uv run src/extract_invoice.py <file>` (Extract information from incoming invoices).
+- PDF Extraction: `uv run extract-invoice <file>` (Extract information from incoming invoices).
 
 ## 📂 Data Structure
 - `data/companies/*.md`: Company profiles (Markdown).

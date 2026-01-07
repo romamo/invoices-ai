@@ -40,9 +40,9 @@ If you are an AI assistant helping the user with this project, please refer to t
 ```
 
 ## PDF Extraction
-To extract text from a PDF invoice (useful for analysis):
-`uv run src/extract_invoice.py <path_to_pdf>`
-Example: `uv run src/extract_invoice.py Inbox/invoice.pdf`
+To extract text from a PDF invoice:
+`uv run extract-invoice <path_to_pdf>`
+Example: `uv run extract-invoice Inbox/invoice.pdf`
 
 ## How to Control
 You can manage the project using the `uv run py-invoices` CLI. If you are using an AI-assisted editor, simply ask the agent to "run the setup workflow" or "create a new invoice for client X".
@@ -50,7 +50,8 @@ You can manage the project using the `uv run py-invoices` CLI. If you are using 
 
 ### Commands
 - **Setup**: `uv run py-invoices setup` (Interactive configuration)
-- **Initialize**: `uv run py-invoices init` (Create data directories)
+- **Validate**: `uv run py-invoices validate`
+- **Extract**: `uv run extract-invoice [PDF]`
 - **Configuration**: `uv run py-invoices config show`
 - **Add Client**: `uv run py-invoices clients create --name "Client Name"`
 - **Add Company**: `uv run py-invoices companies create`

@@ -14,6 +14,7 @@ The main CLI tool is `py-invoices`. Always use `uv run` to execute commands.
 | **Init** | `uv run py-invoices init` |
 | **Config** | `uv run py-invoices config show` |
 | **Validate**| `uv run py-invoices validate` |
+| **Extract** | `uv run extract-invoice [PDF]` |
 
 ## 🏗️ Entity Management
 

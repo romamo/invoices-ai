@@ -48,10 +48,12 @@ def extract_text_from_pdf(pdf_path):
     except Exception as e:
         print(f"Error reading PDF: {e}")
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) < 2:
-        print("Usage: uv run extract_invoice.py <path_to_pdf>")
+        print("Usage: extract-invoice <path_to_pdf>")
         sys.exit(1)
     
     extract_text_from_pdf(sys.argv[1])
-    # Example: uv run src/extract_invoice.py Inbox/invoice.pdf
+
+if __name__ == "__main__":
+    main()
