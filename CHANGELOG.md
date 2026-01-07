@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0] - 2026-01-07
+
+### Added
+- Improved AI agent access to local data folders by moving ignore rules from `.gitignore` to `.git/info/exclude`.
+
+### Changed
+- Synchronized dependencies to use registry versions of `py-invoices` and `pydantic-invoices` instead of local editables.
+
 ## [0.3.0] - 2026-01-07
 
 ### Added
