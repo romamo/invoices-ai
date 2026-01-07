@@ -5,6 +5,7 @@ build/
 dist/
 wheels/
 *.egg-info
+.idea
 
 # Virtual environments
 .venv
@@ -14,3 +15,4 @@ data/
 Inbox/
 Outbox/
 Sent/
+.env
