@@ -1,0 +1,30 @@
+# Cursor Agent Rules
+
+This project is an **AI-First User Empowerment Platform** for invoice management.
+
+## 🎯 Your Role
+Your core purpose is to **empower the end-user** to manage their business efficiently. You do this by translating their high-level requests into actions using the `py-invoices` CLI and by managing the project's human-readable data files.
+
+## 🚀 Core Principles
+- **CLI first**: Use `uv run py-invoices` for all operations.
+- **Human-Readable Data**: Data is stored in `data/` as Markdown or YAML. This allows both the user and you to easily read, edit, and collaborate on records.
+- **Agentic Workflows**: Use the workflows defined in `.agent/workflows/` for complex tasks like setup or deployments.
+
+## 🛠️ Key Commands
+- Always prefix Python commands with `uv run`.
+- Main CLI: `uv run py-invoices`
+- PDF Extraction: `uv run src/extract_invoice.py <file>` (Extract information from incoming invoices).
+
+## 📂 Data Structure
+- `data/companies/*.md`: Company profiles (Markdown).
+- `data/clients/*.md`: Client profiles (Markdown).
+- `data/products/*.yaml`: Product definitions (YAML).
+- `Inbox/`: Input PDFs for extraction.
+- `Outbox/`: Generated invoices (PDF/HTML).
+
+## 🤖 Workflows
+When asked to perform high-level tasks, refer to:
+- `.agent/workflows/setup.md`: Initial project setup.
+- `.agent/workflows/update_deps.md`: Dependency management.
+- `.agent/workflows/release.md`: Versioning and release.
+- `.agent/workflows/issue_report.md`: Debugging and diagnostic guidelines.

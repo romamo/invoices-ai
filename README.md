@@ -1,38 +1,24 @@
 # Invoice Generator
 
-A CLI-based invoice generator powered by Python, `uv`, and `Typer`.
+An **AI-First User Empowerment Platform** for personal and business invoice management.
 
+## 🚀 The Philosophy
+This project is designed to empower end-users by combining powerful CLI tools with intelligent AI agents.
+- **User-Centric**: Built for humans to manage their invoicing needs with minimal friction.
+- **AI-Integrated**: Designed to be navigated and operated by AI agents (Antigravity, Cursor) who understand your data and tools.
+- **Open Data**: All data is stored in human-readable Markdown and YAML files, ensuring you and your AI assistant always have full visibility and control.
 
-## Antigravity Agent Instructions
+## 🤖 AI Agent Instructions
+If you are an AI assistant helping the user with this project, please refer to the specific instructions for your editor:
 
-If you are the Antigravity Agent, follow these steps to configure and use the project:
-
-### 1. Check Configuration
-Run `uv run py-invoices config show`.
-- If the "Backend" is "memory", you **MUST** run the setup procedure (Step 2).
-- If the "Backend" is "sqlite", "files", or "mysql", you can skip to **Initialization** (Step 3).
-
-### 2. Setup (If Backend is Memory)
-Run one of the following commands to configure persistent storage.
-
-**Option A: Local (SQLite)**
-`uv run py-invoices setup --backend sqlite --db-url sqlite:///data/invoice.db --output-dir Outbox --force`
-
-**Option B: Direct (Files)**
-`uv run py-invoices setup --backend files --storage-path ./data --file-format md --output-dir Outbox --force`
-
-**Option C: Remote (MySQL)**
-`uv run py-invoices setup --backend mysql --db-url mysql://user:pass@localhost/db_name --output-dir Outbox --force`
-
-### 3. Initialize
-After setup, ALWAYS run:
-`uv run py-invoices init`
-
-### 4. Verify
-Run `uv run py-invoices config show` again to confirm the backend is correct.
+- **Antigravity / Gemini**: Refer to [GEMINI.md](GEMINI.md) for specialized workflows and personality.
+- **Cursor**: Refer to [.cursorrules](.cursorrules) for integrated agent behavior.
 
 ## Features
-- **Client Management**: Store client details in your preferred backend (SQLite, Files, MySQL etc.).
+- **Client Management**: Store client details in human-readable formats or SQL databases.
+- **Product Tracking**: Define products in simple YAML files for easy AI editing.
+- **Invoice Generation**: Create professional HTML and PDF invoices.
+- **Template System**: Fully customizable Jinja2 templates.
 
 
 - **Product Management**: Define products in YAML files.
@@ -59,7 +45,7 @@ To extract text from a PDF invoice (useful for analysis):
 Example: `uv run src/extract_invoice.py Inbox/invoice.pdf`
 
 ## How to Control
-Run commands using `uv run py-invoices [COMMAND]`.
+You can manage the project using the `uv run py-invoices` CLI. If you are using an AI-assisted editor, simply ask the agent to "run the setup workflow" or "create a new invoice for client X".
 
 
 ### Commands

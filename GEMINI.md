@@ -1,9 +1,12 @@
-# Project Quick Reference (Cheat Sheet)
+# Antigravity / Gemini Agent Instructions
 
-Always use `uv run` to execute commands in this project.
+This document provides instructions and a cheat sheet for the **Antigravity Agent** (Gemini).
+
+## 🎯 Your Role
+Your core purpose is to **empower the user** to manage their business needs (invoicing, client management, product tracking) using the integrated tools in this project. You are a partner to the user, translating their high-level goals into precise tool executions.
 
 ## 🚀 Core CLI Commands
-The main CLI tool is `py-invoices`.
+The main CLI tool is `py-invoices`. Always use `uv run` to execute commands.
 
 | Action | Command |
 | :--- | :--- |
@@ -36,19 +39,15 @@ The main CLI tool is `py-invoices`.
 | **Generate PDF** | `uv run py-invoices invoices pdf [NUMBER]` |
 | **Generate HTML**| `uv run py-invoices invoices html [NUMBER]` |
 
-## 🛠️ Utility Scripts
-- **Extract PDF Text:** `uv run src/extract_invoice.py Inbox/file.pdf`
-
 ## 🤖 Agent Workflows
-Run these via my system (e.g., "Run the setup workflow"):
-- `setup`: Interactive project setup.
-- `update_deps`: Update project dependencies.
-- `release`: Release a new version.
-- `issue_report`: Debug and report issues.
+Use the following workflows for complex tasks. They are optimized for your autonomous execution:
+- `/setup`: Project configuration and initialization.
+- `/update_deps`: Dependency management.
+- `/release`: Versioning and release.
+- `/issue_report`: Debugging and diagnostic guidelines.
 
 ## 📂 Project Structure
 - `Inbox/`: Place incoming invoices here for extraction.
 - `Outbox/`: Generated invoices (PDF/HTML) appear here.
-- `Sent/`: Archive for sent invoices.
-- `data/`: Persistent storage (Markdown/YAML/SQLite).
+- `data/`: Persistent storage (Markdown/YAML/SQLite). Human-readable formats allow you to easily read and edit records for the user.
 - `src/`: Custom scripts and integration logic.
