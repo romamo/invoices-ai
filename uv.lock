@@ -429,7 +429,7 @@ woff = [
 
 [[package]]
 name = "invoice-generator"
-version = "0.1.0"
+version = "0.3.0"
 source = { editable = "." }
 dependencies = [
     { name = "py-invoices", extra = ["cli", "pdf"] },
@@ -443,7 +443,7 @@ parsing = [
 [package.metadata]
 requires-dist = [
     { name = "pdfplumber", marker = "extra == 'parsing'", specifier = ">=0.11.0" },
-    { name = "py-invoices", extras = ["cli", "pdf"], editable = "../py-invoices" },
+    { name = "py-invoices", extras = ["cli", "pdf"], specifier = ">=1.7.0" },
 ]
 provides-extras = ["parsing"]
 
@@ -693,13 +693,17 @@ wheels = [
 [[package]]
 name = "py-invoices"
 version = "1.8.1"
-source = { editable = "../py-invoices" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "jinja2" },
     { name = "pydantic" },
     { name = "pydantic-invoices" },
     { name = "pydantic-settings" },
     { name = "python-multipart" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e4/4f/66efc6a222e3e63d49da5940b80c5c596432449e13ca9d08cea115a668fa/py_invoices-1.8.1.tar.gz", hash = "sha256:d6d3c629473c402de114dc5748532761ca44c0e11dc6cdc9c6ba79d7fcda00d2", size = 195131, upload-time = "2026-01-06T12:27:13.134Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/45/25/64696a2c462793d2e727d56031277c3d573fdcbd1f5b4596d04ce11ef2fa/py_invoices-1.8.1-py3-none-any.whl", hash = "sha256:d9913f70e00b47ba3c0cbaacdf419bf60c990e851f76dcc31c7e1b9c34543983", size = 90747, upload-time = "2026-01-06T12:27:11.854Z" },
 ]
 
 [package.optional-dependencies]
@@ -710,39 +714,6 @@ cli = [
 pdf = [
     { name = "pyyaml" },
     { name = "weasyprint" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "fastapi", marker = "extra == 'api'", specifier = ">=0.100.0" },
-    { name = "jinja2", specifier = ">=3.1.5" },
-    { name = "psycopg2-binary", marker = "extra == 'postgres'", specifier = ">=2.9.0" },
-    { name = "py-invoices", extras = ["sqlite", "postgres", "mysql", "files", "pdf", "cli", "api", "dotenv"], marker = "extra == 'all'" },
-    { name = "pydantic", specifier = ">=2.0.0" },
-    { name = "pydantic-invoices", editable = "../pydantic-invoices" },
-    { name = "pydantic-settings", specifier = ">=2.0.0" },
-    { name = "pymysql", marker = "extra == 'mysql'", specifier = ">=1.1.0" },
-    { name = "python-dotenv", marker = "extra == 'dotenv'", specifier = ">=1.0.0" },
-    { name = "python-multipart", specifier = ">=0.0.21" },
-    { name = "pyyaml", marker = "extra == 'pdf'", specifier = ">=6.0" },
-    { name = "pyyaml", marker = "extra == 'yaml'", specifier = ">=6.0" },
-    { name = "rich", marker = "extra == 'cli'", specifier = ">=14.2.0" },
-    { name = "sqlmodel", marker = "extra == 'mysql'", specifier = ">=0.0.22" },
-    { name = "sqlmodel", marker = "extra == 'postgres'", specifier = ">=0.0.22" },
-    { name = "sqlmodel", marker = "extra == 'sqlite'", specifier = ">=0.0.22" },
-    { name = "typer", marker = "extra == 'cli'", specifier = ">=0.9.0" },
-    { name = "uvicorn", marker = "extra == 'api'", specifier = ">=0.20.0" },
-    { name = "weasyprint", marker = "extra == 'pdf'", specifier = ">=63.1" },
-]
-provides-extras = ["sqlite", "postgres", "mysql", "memory", "files", "yaml", "pdf", "cli", "api", "dotenv", "all"]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "httpx", specifier = ">=0.27.0" },
-    { name = "mypy", specifier = ">=1.8.0" },
-    { name = "pytest", specifier = ">=8.0.0" },
-    { name = "pytest-cov", specifier = ">=4.1.0" },
-    { name = "ruff", specifier = ">=0.2.0" },
 ]
 
 [[package]]
@@ -890,25 +861,13 @@ wheels = [
 [[package]]
 name = "pydantic-invoices"
 version = "1.3.1"
-source = { editable = "../pydantic-invoices" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pydantic" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "mypy", marker = "extra == 'dev'", specifier = ">=1.0.0" },
-    { name = "pydantic", specifier = ">=2.0.0" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.0.0" },
-    { name = "pytest-cov", marker = "extra == 'dev'", specifier = ">=4.0.0" },
-]
-provides-extras = ["dev"]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "mypy", specifier = ">=1.19.1" },
-    { name = "pytest-cov", specifier = ">=7.0.0" },
-    { name = "ruff", specifier = ">=0.14.10" },
+sdist = { url = "https://files.pythonhosted.org/packages/e1/db/79a8da194335947f4be44aa5e3e026944f1955aef478c288c76a2eaf67bc/pydantic_invoices-1.3.1.tar.gz", hash = "sha256:f401577e73bd9cc67aa4739c220bb98687e324212c0accf0aa1ac1a4fc08d530", size = 55146, upload-time = "2026-01-06T13:21:07.894Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d4/15/bb909e8fa8729f72f6a940c58c80492de82b20b2e63794fb555c5b81c8b4/pydantic_invoices-1.3.1-py3-none-any.whl", hash = "sha256:faca829a48ee5d7b30644afaa5d4d824132cee8775762c156b1e1b034e3c60f4", size = 15045, upload-time = "2026-01-06T13:21:06.777Z" },
 ]
 
 [[package]]

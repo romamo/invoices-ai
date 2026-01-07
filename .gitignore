@@ -12,8 +12,9 @@ wheels/
 .venv
 
 # User data
-data/
-Inbox/
-Outbox/
-Sent/
-.env
+# (Moved to .git/info/exclude to allow agent access)
+# data/
+# Inbox/
+# Outbox/
+# Sent/
+# .env
