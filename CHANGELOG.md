@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.3.0] - 2026-01-07
+
+### Added
+- Professionalized project metadata in `pyproject.toml` (Authors, License, Repository URLs).
+- Formalized `extract-invoice` CLI script.
+- Standardized package structure under `src/invoice_generator`.
+
+### Changed
+- Updated `extract_invoice.py` with a proper `main()` entry point.
+- Refined agent rules and documentations for the new CLI command.
+
 ## [0.2.0] - 2026-01-07
 
 ### Added
