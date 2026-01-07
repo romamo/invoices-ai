@@ -54,3 +54,4 @@ if __name__ == "__main__":
         sys.exit(1)
     
     extract_text_from_pdf(sys.argv[1])
+    # Example: uv run src/extract_invoice.py Inbox/invoice.pdf

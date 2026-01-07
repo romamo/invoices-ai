@@ -1,4 +1,4 @@
-# Antigravity Invoice Generator
+# Invoice Generator
 
 A CLI-based invoice generator powered by Python, `uv`, and `Typer`.
 
@@ -16,13 +16,13 @@ Run `uv run py-invoices config show`.
 Run one of the following commands to configure persistent storage.
 
 **Option A: Local (SQLite)**
-`uv run py-invoices setup --backend sqlite --db-url sqlite:///data/invoice.db --force`
+`uv run py-invoices setup --backend sqlite --db-url sqlite:///data/invoice.db --output-dir Outbox --force`
 
 **Option B: Direct (Files)**
-`uv run py-invoices setup --backend files --storage-path ./data --file-format md --force`
+`uv run py-invoices setup --backend files --storage-path ./data --file-format md --output-dir Outbox --force`
 
 **Option C: Remote (MySQL)**
-`uv run py-invoices setup --backend mysql --db-url mysql://user:pass@localhost/db_name --force`
+`uv run py-invoices setup --backend mysql --db-url mysql://user:pass@localhost/db_name --output-dir Outbox --force`
 
 ### 3. Initialize
 After setup, ALWAYS run:
@@ -43,8 +43,9 @@ Run `uv run py-invoices config show` again to confirm the backend is correct.
 ```
 .
 ├── src/                # Source scripts (extract_invoice.py)
-├── input/              # Input documents (PDFs for extraction)
-├── output/             # Generated invoices (PDF/HTML)
+├── Inbox/              # Input documents (PDFs for extraction)
+├── Outbox/             # Generated invoices (PDF/HTML)
+├── Sent/               # Sent invoices archive
 ├── data/               # Persistent data storage
 │   ├── invoice.db      # SQLite database (if using local backend)
 │   └── ...             # Markdown files (if using files backend)
@@ -55,7 +56,7 @@ Run `uv run py-invoices config show` again to confirm the backend is correct.
 ## PDF Extraction
 To extract text from a PDF invoice (useful for analysis):
 `uv run src/extract_invoice.py <path_to_pdf>`
-Example: `uv run src/extract_invoice.py input/invoice.pdf`
+Example: `uv run src/extract_invoice.py Inbox/invoice.pdf`
 
 ## How to Control
 Run commands using `uv run py-invoices [COMMAND]`.
