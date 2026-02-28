@@ -10,7 +10,7 @@ authors = [
 ]
 keywords = ["invoice", "invoice generator", "ai", "agent", "automation"]
 dependencies = [
-    "py-invoices[cli,pdf]>=1.7.0",
+    "py-invoices[cli,pdf]>=1.8.4",
 ]
 
 [project.optional-dependencies]

@@ -45,25 +45,25 @@ To extract text from a PDF invoice:
 Example: `uv run extract-invoice Inbox/invoice.pdf`
 
 ## How to Control
-You can manage the project using the `uv run py-invoices` CLI. If you are using an AI-assisted editor, simply ask the agent to "run the setup workflow" or "create a new invoice for client X".
+You can manage the project using the `uv run inv` CLI. If you are using an AI-assisted editor, simply ask the agent to "run the setup workflow" or "create a new invoice for client X".
 
 
 ### Commands
-- **Setup**: `uv run py-invoices setup` (Interactive configuration)
-- **Validate**: `uv run py-invoices validate`
+- **Setup**: `uv run inv setup` (Interactive configuration)
+- **Validate**: `uv run inv validate`
 - **Extract**: `uv run extract-invoice [PDF]`
-- **Configuration**: `uv run py-invoices config show`
-- **Add Client**: `uv run py-invoices clients create --name "Client Name"`
-- **Add Company**: `uv run py-invoices companies create`
-- **Add Product**: `uv run py-invoices products create`
-- **Add Payment Note**: `uv run py-invoices payment-notes create`
-- **Create Invoice**: `uv run py-invoices invoices create --client-name "Name"`
-- **List Invoices**: `uv run py-invoices invoices list`
-- **Clone Invoice**: `uv run py-invoices invoices clone [INVOICE_NUMBER]`
+- **Configuration**: `uv run inv config show`
+- **Add Client**: `uv run inv clients create --name "Client Name"`
+- **Add Company**: `uv run inv companies create`
+- **Add Product**: `uv run inv products create`
+- **Add Payment Note**: `uv run inv payment-notes create`
+- **Create Invoice**: `uv run inv invoices create --client-name "Name"`
+- **List Invoices**: `uv run inv invoices list`
+- **Clone Invoice**: `uv run inv invoices clone [INVOICE_NUMBER]`
 
 ## Adding Products
 You can use the CLI to create products interactively:
-`uv run py-invoices products create`
+`uv run inv products create`
 
 Alternatively, create a new YAML file in `data/products/`.
 Example `data/products/1.service.yaml`:
