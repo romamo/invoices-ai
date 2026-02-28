@@ -1,9 +1,21 @@
 # Changelog
 
-## [0.5.0] - 2026-02-28
+## [0.6.0] - 2026-02-28
+
+### Added
+- Unified `AGENTS.md` to provide comprehensive instructions for all AI agents.
 
 ### Changed
 - Updated `py-invoices` dependency to `>=1.9.0`.
+- Standardized CLI usage to `uv run inv` for efficiency.
+- Refined `README.md` to reference the unified agent documentation.
+
+### Removed
+- Legacy editor-specific agent instructions (`.cursorrules`, `GEMINI.md`).
+
+## [0.5.0] - 2026-02-28
+
+### Changed
 - Updated `py-invoices` dependency to `>=1.8.4`.
 - Updated documentation to use `inv` as the primary CLI command prefix.
 - Refined README with clearer setup and usage instructions.

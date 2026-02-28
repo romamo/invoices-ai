@@ -9,10 +9,9 @@ This project is designed to empower end-users by combining powerful CLI tools wi
 - **Open Data**: All data is stored in human-readable Markdown and YAML files, ensuring you and your AI assistant always have full visibility and control.
 
 ## 🤖 AI Agent Instructions
-If you are an AI assistant helping the user with this project, please refer to the specific instructions for your editor:
+If you are an AI assistant helping the user with this project, please refer to the unified agent instructions:
 
-- **Antigravity / Gemini**: Refer to [GEMINI.md](GEMINI.md) for specialized workflows and personality.
-- **Cursor**: Refer to [.cursorrules](.cursorrules) for integrated agent behavior.
+- **All Agents**: Refer to [AGENTS.md](AGENTS.md) for specialized workflows, core principles, and CLI cheat sheets.
 
 ## Features
 - **Client Management**: Store client details in human-readable formats or SQL databases.
