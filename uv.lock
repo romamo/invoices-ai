@@ -461,7 +461,7 @@ parsing = [
 [package.metadata]
 requires-dist = [
     { name = "pdfplumber", marker = "extra == 'parsing'", specifier = ">=0.11.0" },
-    { name = "py-invoices", extras = ["cli", "pdf"], specifier = ">=1.8.4" },
+    { name = "py-invoices", extras = ["cli", "pdf"], specifier = ">=1.9.0" },
 ]
 provides-extras = ["parsing"]
 
@@ -710,7 +710,7 @@ wheels = [
 
 [[package]]
 name = "py-invoices"
-version = "1.8.4"
+version = "1.9.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "defusedxml" },
@@ -720,9 +720,9 @@ dependencies = [
     { name = "pydantic-settings" },
     { name = "python-multipart" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b8/c2/e79e4417fa5051c2e0e14ffb83cca3bc0191c544c3751340e9b484da6472/py_invoices-1.8.4.tar.gz", hash = "sha256:ccce4a9ebc217c90a40e791c1c540d1ad2b24269a4ec7836abf817fe50dfaf2a", size = 78217, upload-time = "2026-02-27T11:51:21.746Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/de/80/baba326a64d758a8e2d2a96d7269d9318802ce0ded878c6f0edb76a754ed/py_invoices-1.9.0.tar.gz", hash = "sha256:260562283568ae87c64985a525acd624b302b566177a017058cbfba80507b0f9", size = 78637, upload-time = "2026-02-28T12:05:05.352Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/d6/9d/43b82194cb2e0b4e37edbf550c07bc6e99ce338c9d6df7ffffd329e18c8a/py_invoices-1.8.4-py3-none-any.whl", hash = "sha256:41d2b191a37b50d22304643f7d2c5dbda3cd2495ba34be1f951407ff87c8a89f", size = 92825, upload-time = "2026-02-27T11:51:20.679Z" },
+    { url = "https://files.pythonhosted.org/packages/37/89/2a72976c4451fdeef54c05a0a6c2edd5dbbacb9c95ffeb7e689c12471097/py_invoices-1.9.0-py3-none-any.whl", hash = "sha256:e2d3329b9f54ce3baf1257af40453641ca222bdd0940c1d4d173ea4ecf346cc1", size = 93338, upload-time = "2026-02-28T12:05:04.161Z" },
 ]
 
 [package.optional-dependencies]
@@ -879,14 +879,14 @@ wheels = [
 
 [[package]]
 name = "pydantic-invoices"
-version = "1.3.1"
+version = "1.4.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pydantic" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/e1/db/79a8da194335947f4be44aa5e3e026944f1955aef478c288c76a2eaf67bc/pydantic_invoices-1.3.1.tar.gz", hash = "sha256:f401577e73bd9cc67aa4739c220bb98687e324212c0accf0aa1ac1a4fc08d530", size = 55146, upload-time = "2026-01-06T13:21:07.894Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/9d/ad/5d9d4bd197d998dca26c0124f64b41fa3538f0deae6dd58a813ae6b0360b/pydantic_invoices-1.4.0.tar.gz", hash = "sha256:5bf12a8a1950df6f284695584d2ae98c2f956771a8f931db61658859b0140733", size = 15438, upload-time = "2026-02-28T12:03:07.024Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/d4/15/bb909e8fa8729f72f6a940c58c80492de82b20b2e63794fb555c5b81c8b4/pydantic_invoices-1.3.1-py3-none-any.whl", hash = "sha256:faca829a48ee5d7b30644afaa5d4d824132cee8775762c156b1e1b034e3c60f4", size = 15045, upload-time = "2026-01-06T13:21:06.777Z" },
+    { url = "https://files.pythonhosted.org/packages/6d/48/171f675957c1784a219d0de9c8de24f793fb6b5b3b0d4fdd25491a3f5485/pydantic_invoices-1.4.0-py3-none-any.whl", hash = "sha256:8886edf46ad136eea84eb642848a6e16a26185f70c57528ef5da590039adf4a0", size = 17696, upload-time = "2026-02-28T12:03:06.005Z" },
 ]
 
 [[package]]
