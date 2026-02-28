@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0] - 2026-02-28
+
+### Changed
+- Updated `py-invoices` dependency to `>=1.8.4`.
+- Updated documentation to use `inv` as the primary CLI command prefix.
+- Refined README with clearer setup and usage instructions.
+
 ## [0.4.0] - 2026-01-07
 
 ### Added
