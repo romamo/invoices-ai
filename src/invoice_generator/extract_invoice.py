@@ -12,7 +12,7 @@ def ensure_pdfplumber():
         if choice == 'y':
             print("Installing pdfplumber...")
             subprocess.run(["uv", "pip", "install", "pdfplumber"], check=True)
-            print("pdlplumber installed. Importing...")
+            print("pdfplumber installed. Importing...")
             import pdfplumber
             return pdfplumber
         else:
@@ -45,8 +45,8 @@ def extract_text_from_pdf(pdf_path):
                     for table in tables:
                         for row in table:
                             print(row)
-    except Exception as e:
-        print(f"Error reading PDF: {e}")
+    except Exception:
+        raise
 
 def main():
     if len(sys.argv) < 2:
