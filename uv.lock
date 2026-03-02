@@ -447,7 +447,7 @@ woff = [
 
 [[package]]
 name = "invoice-generator"
-version = "0.5.0"
+version = "0.6.0"
 source = { editable = "." }
 dependencies = [
     { name = "py-invoices", extra = ["cli", "pdf"] },
@@ -461,7 +461,7 @@ parsing = [
 [package.metadata]
 requires-dist = [
     { name = "pdfplumber", marker = "extra == 'parsing'", specifier = ">=0.11.0" },
-    { name = "py-invoices", extras = ["cli", "pdf"], specifier = ">=1.9.0" },
+    { name = "py-invoices", extras = ["cli", "pdf"], specifier = ">=1.9.1" },
 ]
 provides-extras = ["parsing"]
 
@@ -710,7 +710,7 @@ wheels = [
 
 [[package]]
 name = "py-invoices"
-version = "1.9.0"
+version = "1.9.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "defusedxml" },
@@ -720,9 +720,9 @@ dependencies = [
     { name = "pydantic-settings" },
     { name = "python-multipart" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/de/80/baba326a64d758a8e2d2a96d7269d9318802ce0ded878c6f0edb76a754ed/py_invoices-1.9.0.tar.gz", hash = "sha256:260562283568ae87c64985a525acd624b302b566177a017058cbfba80507b0f9", size = 78637, upload-time = "2026-02-28T12:05:05.352Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/06/00/5c9c931ed25a6d31096d0a8e369bd669179235da4eab83bdbdb5cbc66a00/py_invoices-1.9.1.tar.gz", hash = "sha256:d3054cca3c6455c8af3769cc8d87463d79928773287b3bc2cee0895e20d55402", size = 79244, upload-time = "2026-03-02T18:45:15.61Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/37/89/2a72976c4451fdeef54c05a0a6c2edd5dbbacb9c95ffeb7e689c12471097/py_invoices-1.9.0-py3-none-any.whl", hash = "sha256:e2d3329b9f54ce3baf1257af40453641ca222bdd0940c1d4d173ea4ecf346cc1", size = 93338, upload-time = "2026-02-28T12:05:04.161Z" },
+    { url = "https://files.pythonhosted.org/packages/e5/e3/3997f6d8f0db1f7a2aa89a92061740bb7feac9f61899e0755c96ecc08b19/py_invoices-1.9.1-py3-none-any.whl", hash = "sha256:105cc5cd1de000fb92b932a1acc736712d7f47dbd90f942f1a5fc5f74fb8fba2", size = 93343, upload-time = "2026-03-02T18:45:16.601Z" },
 ]
 
 [package.optional-dependencies]
@@ -879,14 +879,15 @@ wheels = [
 
 [[package]]
 name = "pydantic-invoices"
-version = "1.4.0"
+version = "1.4.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pydantic" },
+    { name = "python-stdnum" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/9d/ad/5d9d4bd197d998dca26c0124f64b41fa3538f0deae6dd58a813ae6b0360b/pydantic_invoices-1.4.0.tar.gz", hash = "sha256:5bf12a8a1950df6f284695584d2ae98c2f956771a8f931db61658859b0140733", size = 15438, upload-time = "2026-02-28T12:03:07.024Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/cc/29/fda12569ddffefe053a6fe4f95b6cd0973c0cf34c1165018976ecabee0c7/pydantic_invoices-1.4.1.tar.gz", hash = "sha256:138a2702310917e3a54250a00231e511a6f3cf360e5293d598739edff0905c12", size = 16545, upload-time = "2026-03-02T13:42:49.967Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6d/48/171f675957c1784a219d0de9c8de24f793fb6b5b3b0d4fdd25491a3f5485/pydantic_invoices-1.4.0-py3-none-any.whl", hash = "sha256:8886edf46ad136eea84eb642848a6e16a26185f70c57528ef5da590039adf4a0", size = 17696, upload-time = "2026-02-28T12:03:06.005Z" },
+    { url = "https://files.pythonhosted.org/packages/89/3f/091d2ce3383de2a6cbb6d7a0e9185c3298af7429cbaef932fc8cf5ea800c/pydantic_invoices-1.4.1-py3-none-any.whl", hash = "sha256:24c52955f10f105e735f61e716ce94cf2753e734fc70cce2ab2b525609307ae3", size = 18282, upload-time = "2026-03-02T13:42:50.951Z" },
 ]
 
 [[package]]
@@ -975,6 +976,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/94/01/979e98d542a70714b0cb2b6728ed0b7c46792b695e3eaec3e20711271ca3/python_multipart-0.0.22.tar.gz", hash = "sha256:7340bef99a7e0032613f56dc36027b959fd3b30a787ed62d310e951f7c3a3a58", size = 37612, upload-time = "2026-01-25T10:15:56.219Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/1b/d0/397f9626e711ff749a95d96b7af99b9c566a9bb5129b8e4c10fc4d100304/python_multipart-0.0.22-py3-none-any.whl", hash = "sha256:2b2cd894c83d21bf49d702499531c7bafd057d730c201782048f7945d82de155", size = 24579, upload-time = "2026-01-25T10:15:54.811Z" },
+]
+
+[[package]]
+name = "python-stdnum"
+version = "2.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/15/7f/96c2b9de6024353177dc6139c33730d5ac25877bc33215515d6b95b84555/python_stdnum-2.2.tar.gz", hash = "sha256:e95fcfa858a703d4a40130cb3eaac133c60d8808a7f3c98efeedac968c2479b9", size = 1311813, upload-time = "2026-01-04T19:36:16.753Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/2f/61/aa32d9c79f83a2fae033cd6496fb2a24aba918d31c73704271dfcfb48375/python_stdnum-2.2-py3-none-any.whl", hash = "sha256:bdf98fd117a0ca152e4047aa8ad254bae63853d4e915ddd4e0effb33ba0e9260", size = 1193213, upload-time = "2026-01-04T19:36:14.812Z" },
 ]
 
 [[package]]
