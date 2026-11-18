@@ -65,6 +65,9 @@ Use the following slash command workflows for complex autonomous tasks:
 - `/release`: Versioning and release.
 - `/issue_report`: Debugging and diagnostic guidelines.
 
+Skills in `.agent/skills/`:
+- `clone-invoice`: Clone a client's last invoice, issue it and render PDF/HTML.
+
 ## 📂 Project Structure & Data
 - `src/`: Custom scripts and integration logic.
 - `Inbox/`: Place incoming invoices here for extraction (`uv run extract-invoice Inbox/invoice.pdf`).

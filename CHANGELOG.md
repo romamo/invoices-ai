@@ -2,6 +2,9 @@
 
 ## [0.7.0] - 2026-11-18
 
+### Added
+- `clone-invoice` skill (`.agent/skills/clone-invoice/SKILL.md`): clones a client's last invoice and issues it (`--issue`, or `invoices update` then `invoices issue`) before rendering
+
 ### Changed
 - Updated `py-invoices` dependency to `>=6.0.0` (pydantic-invoices 1.7.0). Breaking: `invoices create` and `invoices clone` now make drafts; pass `--issue`, or run `invoices issue` after adjusting the draft with `invoices update`
 - Raised `requires-python` to `>=3.14` (required by py-invoices 6.0.0) and pinned `.python-version` to 3.14
