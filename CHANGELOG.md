@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.7.0] - 2026-11-18
+
+### Changed
+- Updated `py-invoices` dependency to `>=6.0.0` (pydantic-invoices 1.7.0). Breaking: `invoices create` and `invoices clone` now make drafts; pass `--issue`, or run `invoices issue` after adjusting the draft with `invoices update`
+- Raised `requires-python` to `>=3.14` (required by py-invoices 6.0.0) and pinned `.python-version` to 3.14
+- Documented the draft -> issue lifecycle, `invoices update`, `invoices issue`, credit-note corrections and `validate data` in `AGENTS.md` and `README.md`
+- Setup workflow notes the SQL migration needed when an existing SQL database is upgraded to py-invoices 6.0.0
+
 ## [0.6.0] - 2026-02-28
 
 ### Added

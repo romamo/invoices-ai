@@ -38,3 +38,17 @@ After successful setup, ALWAYS run:
 ```bash
 uv run py-invoices init
 ```
+
+## Upgrading an Existing SQL Database to py-invoices 6.0
+A `sqlite` or `mysql` database created before py-invoices 6.0.0 needs the schema migration from the
+"Migration" section of the 6.0.0 entry in the py-invoices CHANGELOG before any command runs against it
+(it adds `invoices.payment_notes_snapshot`, `invoices.content_hash` and the audit `entity_type` /
+`entity_id` / `corrects_id` columns). The `files` backend needs no migration.
+
+Then check the stored invoices (read-only):
+```bash
+uv run inv validate data
+```
+It lists invoices issued before 6.0 as "unsealed". `uv run inv validate data --seal` records a hash and an
+audit entry for each of them, vouching for their current content; run it only after the user confirms the
+stored data is correct and explicitly agrees.
