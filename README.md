@@ -50,15 +50,20 @@ You can manage the project using the `uv run inv` CLI. If you are using an AI-as
 ### Commands
 - **Setup**: `uv run inv setup` (Interactive configuration)
 - **Validate UBL**: `uv run inv validate invoice [XML]` (checks a UBL 2.1 XML file, not the stored `data/`)
+- **Check Stored Invoices**: `uv run inv validate data` (verifies no issued invoice in `data/` changed since it was issued)
 - **Extract**: `uv run extract-invoice [PDF]`
 - **Configuration**: `uv run inv config show`
 - **Add Client**: `uv run inv clients create --name "Client Name"`
 - **Add Company**: `uv run inv companies create`
 - **Add Product**: `uv run inv products create`
 - **Add Payment Note**: `uv run inv payment-notes create`
-- **Create Invoice**: `uv run inv invoices create --client-name "Name"`
+- **Create Invoice**: `uv run inv invoices create --client-name "Name"` (draft; add `--issue` to issue at once)
 - **List Invoices**: `uv run inv invoices list`
-- **Clone Invoice**: `uv run inv invoices clone [INVOICE_NUMBER]`
+- **Clone Invoice**: `uv run inv invoices clone [INVOICE_NUMBER]` (draft; add `--issue` to issue at once)
+- **Edit Draft**: `uv run inv invoices update DRAFT-<id> ...`
+- **Issue Draft**: `uv run inv invoices issue DRAFT-<id>` (assigns the final number and locks the invoice)
+
+Since py-invoices 6.0, new invoices start as drafts (`DRAFT-<id>`, rendered with a DRAFT watermark). Issuing assigns the next gapless number and locks the invoice; issued invoices are corrected with `uv run inv credit-notes create`, never edited.
 
 ## Adding Products
 You can use the CLI to create products interactively:

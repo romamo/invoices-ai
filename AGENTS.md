@@ -39,11 +39,24 @@ The main CLI tool is `inv` (alias for `py-invoices`). **Always use `uv run` to e
 | Action | Command |
 | :--- | :--- |
 | **List** | `uv run inv invoices list` |
-| **Create** | `uv run inv invoices create --client-name "Name"` |
+| **Create (draft)** | `uv run inv invoices create --client-name "Name"` |
+| **Create and issue** | `uv run inv invoices create --client-name "Name" --issue` |
 | **Details** | `uv run inv invoices details [NUMBER]` |
-| **Clone** | `uv run inv invoices clone [NUMBER]` |
+| **Clone (draft)** | `uv run inv invoices clone [NUMBER] [--unit-price X] [--quantity N] [--description "..."] [--due-date YYYY-MM-DD]` |
+| **Clone and issue** | `uv run inv invoices clone [NUMBER] --issue` |
+| **Edit draft** | `uv run inv invoices update DRAFT-<id> ...` (drafts only) |
+| **Issue draft** | `uv run inv invoices issue DRAFT-<id>` |
+| **Correct issued** | `uv run inv credit-notes create ...` |
 | **Generate PDF** | `uv run inv invoices pdf [NUMBER]` |
 | **Generate HTML**| `uv run inv invoices html [NUMBER]` |
+| **Check stored data** | `uv run inv validate data` (read-only; never add `--seal` without the user's explicit yes) |
+
+#### Invoice lifecycle (py-invoices 6.0+)
+- `invoices create` and `invoices clone` store a **draft** numbered `DRAFT-<id>`; a draft renders with a DRAFT watermark and must never be sent to a client
+- `invoices issue DRAFT-<id>` assigns the final gapless number (e.g. `INV-2026-0018`), locks the content with a SHA-256 hash and marks it `SENT`. Use the issued number for `pdf` / `html`
+- `--issue` on `create` / `clone` does both in one step; use it when nothing needs adjusting
+- Issued invoices cannot be edited or deleted. Fix mistakes with `credit-notes create`, not by editing `data/invoices/*.md` (a hand edit makes `validate data` fail)
+- Bank details live in payment notes: change them with `payment-notes create`, then `payment-notes set-default`, then `payment-notes deactivate` on the old one
 
 ## 🤖 Agent Workflows
 Use the following slash command workflows for complex autonomous tasks:
@@ -51,6 +64,9 @@ Use the following slash command workflows for complex autonomous tasks:
 - `/update_deps`: Dependency management.
 - `/release`: Versioning and release.
 - `/issue_report`: Debugging and diagnostic guidelines.
+
+Skills in `.agent/skills/`:
+- `clone-invoice`: Clone a client's last invoice, issue it and render PDF/HTML.
 
 ## 📂 Project Structure & Data
 - `src/`: Custom scripts and integration logic.
