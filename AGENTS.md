@@ -18,7 +18,7 @@ The main CLI tool is `inv` (alias for `py-invoices`). **Always use `uv run` to e
 | **Setup** | `uv run inv setup` |
 | **Init** | `uv run inv init` |
 | **Config** | `uv run inv config show` |
-| **Validate**| `uv run inv validate` |
+| **Validate UBL** | `uv run inv validate invoice [XML]` (UBL 2.1 file only; does not check `data/`) |
 | **Extract** | `uv run extract-invoice [PDF]` |
 
 ### 🏗️ Entity Management

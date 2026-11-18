@@ -49,7 +49,7 @@ You can manage the project using the `uv run inv` CLI. If you are using an AI-as
 
 ### Commands
 - **Setup**: `uv run inv setup` (Interactive configuration)
-- **Validate**: `uv run inv validate`
+- **Validate UBL**: `uv run inv validate invoice [XML]` (checks a UBL 2.1 XML file, not the stored `data/`)
 - **Extract**: `uv run extract-invoice [PDF]`
 - **Configuration**: `uv run inv config show`
 - **Add Client**: `uv run inv clients create --name "Client Name"`
