@@ -61,7 +61,6 @@ The main CLI tool is `inv` (alias for `py-invoices`). **Always use `uv run` to e
 ## 🤖 Agent Workflows
 Use the following slash command workflows for complex autonomous tasks:
 - `/setup`: Project configuration and initialization.
-- `/update_deps`: Dependency management.
 - `/release`: Versioning and release.
 - `/issue_report`: Debugging and diagnostic guidelines.
 

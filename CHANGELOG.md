@@ -1,5 +1,16 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+- `CLAUDE.md` with project guidance for Claude Code, including the 6.0 draft -> issue lifecycle and known py-invoices issues
+
+### Changed
+- `extract-invoice` fails fast: a missing `pdfplumber` raises `ImportError` with the install command instead of prompting to install it, a missing file raises `FileNotFoundError`, and usage errors go to stderr
+
+### Removed
+- `.agent/workflows/update_deps.md` (dependency updates follow the `dependency-bumper` skill)
+
 ## [0.7.0] - 2026-11-18
 
 ### Added
