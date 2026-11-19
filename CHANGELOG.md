@@ -6,6 +6,8 @@
 - `CLAUDE.md` with project guidance for Claude Code, including the 6.0 draft -> issue lifecycle and known py-invoices issues
 
 ### Changed
+- Updated `py-invoices` dependency to `>=7.0.0` (pydantic-invoices 1.8.0): each company has its own number series (company 2 now numbers as `RM-INV-...`), `pdf` / `html` honor `INVOICES_OUTPUT_DIR` and `--cwd`, and the bank account given to `create` is stored on the invoice. Breaking: rendering no longer replaces an existing file; pass `--overwrite`
+- `CLAUDE.md` and `AGENTS.md` drop the workarounds for romamo/py-invoices#12-#16, fixed in 7.0.0
 - `extract-invoice` fails fast: a missing `pdfplumber` raises `ImportError` with the install command instead of prompting to install it, a missing file raises `FileNotFoundError`, and usage errors go to stderr
 
 ### Removed

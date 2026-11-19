@@ -47,7 +47,7 @@ The main CLI tool is `inv` (alias for `py-invoices`). **Always use `uv run` to e
 | **Edit draft** | `uv run inv invoices update DRAFT-<id> ...` (drafts only) |
 | **Issue draft** | `uv run inv invoices issue DRAFT-<id>` |
 | **Correct issued** | `uv run inv credit-notes create ...` |
-| **Generate PDF** | `uv run inv invoices pdf [NUMBER]` |
+| **Generate PDF** | `uv run inv invoices pdf [NUMBER]` (into `Outbox`; refuses to replace a file without `--overwrite`) |
 | **Generate HTML**| `uv run inv invoices html [NUMBER]` |
 | **Check stored data** | `uv run inv validate data` (read-only; never add `--seal` without the user's explicit yes) |
 
@@ -56,6 +56,7 @@ The main CLI tool is `inv` (alias for `py-invoices`). **Always use `uv run` to e
 - `invoices issue DRAFT-<id>` assigns the final gapless number (e.g. `INV-2026-0018`), locks the content with a SHA-256 hash and marks it `SENT`. Use the issued number for `pdf` / `html`
 - `--issue` on `create` / `clone` does both in one step; use it when nothing needs adjusting
 - Issued invoices cannot be edited or deleted. Fix mistakes with `credit-notes create`, not by editing `data/invoices/*.md` (a hand edit makes `validate data` fail)
+- Each company has its own number series (py-invoices 7.0+): company 2 uses the `RM` prefix (`RM-INV-2026-0001`). On `SERIES_NUMBER_TAKEN`, ask the user for a prefix and run `uv run inv companies set-number-prefix <id> <PREFIX>`
 - Bank details live in payment notes: change them with `payment-notes create`, then `payment-notes set-default`, then `payment-notes deactivate` on the old one
 
 ## 🤖 Agent Workflows

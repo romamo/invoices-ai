@@ -37,8 +37,8 @@ uv run inv invoices details [NUMBER]
 uv run inv invoices clone   [NUMBER] [--issue] [--unit-price X] [--quantity N] [--description ...] [--due-date ...]
 uv run inv invoices update  DRAFT-<id> ...   # drafts only
 uv run inv invoices issue   DRAFT-<id>       # assign the final number and lock the invoice
-uv run inv invoices pdf     [NUMBER] --output-dir Outbox
-uv run inv invoices html    [NUMBER] --output-dir Outbox
+uv run inv invoices pdf     [NUMBER]        # into Outbox; --overwrite to replace
+uv run inv invoices html    [NUMBER]
 uv run inv credit-notes create ...           # the only way to correct an issued invoice
 ```
 
@@ -49,14 +49,15 @@ or send a draft. `invoices issue` (or `--issue` on `create` / `clone`) assigns t
 stores a SHA-256 `content_hash` and marks it `SENT`. Issued invoices cannot be edited or deleted, and a
 hand edit of `data/invoices/*.md` makes `validate data` fail. Every issued invoice in `data/` is sealed.
 
-Known upstream issues to work around:
-- Numbering is one sequence across all companies (romamo/py-invoices#12): do not issue invoices for
-  company 2 through `issue` until it is fixed
-- `pdf` / `html` ignore `INVOICES_OUTPUT_DIR` and write to `output/` unless `--output-dir` is passed
-  (romamo/py-invoices#14), and they overwrite an existing file of the same invoice without warning
-  (romamo/py-invoices#15): check the target before re-rendering an invoice that was already sent
-- Relative paths such as a company's `logo_path` resolve against the process directory, not `--cwd`
-  (romamo/py-invoices#13): run the CLI from the repository root
+Number series (py-invoices 7.0+): each company has its own series. Company 1 (MBR PROPERTY LISTING LTD)
+uses the unprefixed `INV-`/`CN-` series; company 2 (Roman Medvedev) has `number_prefix: RM`, so its
+documents are `RM-INV-2026-0001`, `RM-CN-...`. Its earlier `INV-2026-0001` keeps its number. If issuing
+fails with `SERIES_NUMBER_TAKEN`, the company's next number is held by another company: give it a prefix
+with `uv run inv companies set-number-prefix <id> <PREFIX>` (ask the user which prefix first).
+
+`pdf` / `html` / `--export` write to `INVOICES_OUTPUT_DIR` (`Outbox`) and refuse to replace an existing
+file (exit 6, `OUTPUT_EXISTS`): a rendered issued invoice may be the copy already sent. Pass
+`--overwrite` only when the user wants that file replaced.
 
 ### PDF generation on macOS (important)
 
@@ -73,8 +74,8 @@ Configured by `.env` (`files` backend, Markdown format). Entities live under `da
 **Markdown files with a YAML frontmatter block** holding all fields:
 
 - `data/companies/`, `data/clients/`, `data/products/`, `data/payment_notes/`, `data/invoices/`
-- Each file is named `<id>.md` (e.g. `data/invoices/8.md`) and the name must match the `id` inside it:
-  the files backend updates by file name (romamo/py-invoices#16). Note the README's mention of `.yaml`
+- Each file is named `<id>.md` (e.g. `data/invoices/8.md`) and the name must match the `id` inside it;
+  `validate data` reports a mismatch as `misplaced`. Note the README's mention of `.yaml`
   product files describes a different format than what this `md` backend actually produces — trust the
   on-disk `.md` files.
 - Each entity dir has a `_meta.json` with `{"next_id": N}` tracking ID allocation. Do not hand-edit IDs
@@ -91,8 +92,8 @@ Prefer editing data through the CLI rather than hand-editing `.md` files, so tot
 
 ## Workflow directories
 
-- `Inbox/` — incoming PDFs to extract. `Outbox/` — generated invoices (`INVOICES_OUTPUT_DIR`; earlier renders
-  are in `output/`, see romamo/py-invoices#14). `Sent/` — archive.
+- `Inbox/` — incoming PDFs to extract. `Outbox/` — generated invoices (`INVOICES_OUTPUT_DIR`; renders made
+  before py-invoices 7.0 are in `output/`). `Sent/` — archive.
 - `.agent/workflows/*.md` — agent playbooks invoked as slash-style commands: `setup`, `release`,
   `issue_report`. Read the relevant one before doing that task.
 - `.agent/skills/clone-invoice/SKILL.md` — packaged skill: clone a client's latest invoice, issue it, render outputs.
